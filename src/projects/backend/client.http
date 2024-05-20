@@ -1,0 +1,72 @@
+###
+### AUTH
+###
+
+GET http://localhost:3000/
+
+###
+GET http://localhost:3000/api/healthcheck
+
+
+###
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "full name",
+  "email": "user@example.com",
+  "password": "superscret"
+}
+
+
+###
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "superscret"
+}
+
+###
+### EMPLOYEES
+###
+###
+
+###
+GET http://localhost:3000/api/employees
+Authorization: Bearer 12345
+
+###
+GET http://localhost:3000/api/employees
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjQ2ZDUyNzk0MGU4YWRlNTkxYWNiYWMiLCJpYXQiOjE3MTU5MTgxMzYsImV4cCI6MTcxNjAwNDUzNn0.CbY9bECLQdT2hv0VmTkCBIWWHPAQcf2xrluJsa7umf0
+
+
+###
+POST http://localhost:3000/api/employees
+Content-Type: application/json
+
+{
+  "name": "Dorothy White",
+  "position": "computer scientist",
+  "department": "serasa",
+  "admissionDate": "2020-12-31"
+}
+
+###
+GET http://localhost:3000/api/employees
+
+###
+GET http://localhost:3000/api/employees/6647d39d73894ea78f99b263
+
+###
+PUT http://localhost:3000/api/employees/6647d39d73894ea78f99b263
+Content-Type: application/json
+
+{
+  "name": "Laura Ryan"
+}
+
+###
+DELETE http://localhost:3000/api/employees/6647d39d73894ea78f99b263
+
